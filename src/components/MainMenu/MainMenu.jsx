@@ -36,7 +36,13 @@ const MainMenu = () => {
           to={"/sign-in"}
           className="w-2/12 max-lg:w-[340px] flex items-center justify-center  py-3 border border-white  text-white hover:bg-gray-900 hover:border-transparent hover:transition-all rounded-lg hover:animate-bounce"
         >
-         Sigin In
+          Sigin In
+        </Link>
+        <Link
+          to={"/sign-up"}
+          className="w-2/12 max-lg:w-[340px] flex items-center justify-center  py-3 border border-white  text-white hover:bg-gray-900 hover:border-transparent hover:transition-all rounded-lg hover:animate-bounce"
+        >
+          Sigin Up
         </Link>
       </div>
     </div>

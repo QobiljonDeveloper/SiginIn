@@ -1,18 +1,52 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 function RouletteWheel({ result }) {
   // Define the possible wheel numbers/colors here
   const wheelNumbers = [
-    '0', '32', '15', '19', '4', '21', '2', '25', '17', '34', '6', '27',
-    '13', '36', '11', '30', '8', '23', '10', '5', '24', '16', '33', '1',
-    '20', '14', '31', '9', '22', '18', '29', '7', '28', '12', '35', '3', '26'
+    "0",
+    "32",
+    "15",
+    "19",
+    "4",
+    "21",
+    "2",
+    "25",
+    "17",
+    "34",
+    "6",
+    "27",
+    "13",
+    "36",
+    "11",
+    "30",
+    "8",
+    "23",
+    "10",
+    "5",
+    "24",
+    "16",
+    "33",
+    "1",
+    "20",
+    "14",
+    "31",
+    "9",
+    "22",
+    "18",
+    "29",
+    "7",
+    "28",
+    "12",
+    "35",
+    "3",
+    "26",
   ];
 
   // Define the colors for each number
   const numberColors = {
-    '0': 'green',
-    '32': 'red',
-    '15': 'black',
+    0: "green",
+    32: "red",
+    15: "black",
     // Add more colors here
   };
 
@@ -34,8 +68,8 @@ function RouletteWheel({ result }) {
 
       // Simulate stopping the wheel after a few seconds
       setTimeout(() => {
-        const randomResult = wheelNumbers[Math.floor(Math.random() * wheelNumbers.length)];
-        setResult(randomResult);
+        const randomResult =
+          wheelNumbers[Math.floor(Math.random() * wheelNumbers.length)];
         setSpinning(false);
         clearInterval(spinInterval);
       }, 3000); // Simulated 3-second spin
@@ -45,13 +79,15 @@ function RouletteWheel({ result }) {
   }, [spinning]);
 
   return (
-    <div className={`roulette-wheel ${spinning ? 'spin' : ''}`}>
+    <div className={`roulette-wheel ${spinning ? "spin" : ""}`}>
       {wheelNumbers.map((number, index) => (
         <div
           key={index}
           className={`wheel-number ${getNumberClass(number)}`}
           style={{
-            transform: `rotate(${index * (360 / wheelNumbers.length)}deg) translateY(-100px)`
+            transform: `rotate(${
+              index * (360 / wheelNumbers.length)
+            }deg) translateY(-100px)`,
           }}
         >
           {number}
